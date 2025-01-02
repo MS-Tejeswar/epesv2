@@ -1,0 +1,63 @@
+<!-- feedback_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>GITAM Feedback Form</h1>
+        <h2>Feedback for Faculty</h2>
+    </header>
+
+    <main>
+        <div class="feedback-form-container">
+            <form method="POST">
+                <!-- Hidden Inputs -->
+                <input type="hidden" name="parent_name" value="{{ session.get('parent_name') }}">
+                <input type="hidden" name="parent_number" value="{{ session.get('parent_number') }}">
+                <input type="hidden" name="ward_name" value="{{ session.get('ward_name') }}">
+
+                <!-- Feedback Questions -->
+                <div class="form-group">
+                    <label for="competence">Competence when dealing with issue (1-5):</label>
+                    <input type="number" name="competence" min="1" max="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="attitude">Attitude when dealing with you (1-5):</label>
+                    <input type="number" name="attitude" min="1" max="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="task_resolution">Timely task resolution (1-5):</label>
+                    <input type="number" name="task_resolution" min="1" max="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patience_composure">Patience and composure (1-5):</label>
+                    <input type="number" name="patience_composure" min="1" max="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Availability for issue resolution (1-5):</label>
+                    <input type="number" name="availability" min="1" max="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subjective_feedback">Subjective feedback:</label>
+                    <textarea name="subjective_feedback" rows="4" cols="50" placeholder="Share your thoughts..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GITAM Feedback System</p>
+    </footer>
+</body>
+</html>

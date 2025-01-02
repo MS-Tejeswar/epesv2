@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Role</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>GITAM Feedback Form</h1>
+        <h2>Select Your Role</h2>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="role-selection-container">
+            <div class="role-card">
+                <h3>Are you a Manager?</h3>
+                <p>Access and analyze feedback summaries of your employees.</p>
+                <form method="POST" action="/select_role">
+                    <button type="submit" name="role" value="manager" class="role-btn">Manager</button>
+                </form>
+            </div>
+            <div class="role-card">
+                <h3>Are you a Feedback Giver?</h3>
+                <p>Provide valuable feedback to help improve the experience at GITAM.</p>
+                <form method="POST" action="/select_role">
+                    <button type="submit" name="role" value="feedback_giver" class="role-btn">Feedback Giver</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GITAM Feedback System</p>
+    </footer>
+</body>
+</html>

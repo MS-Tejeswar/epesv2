@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty List</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>GITAM Feedback System</h1>
+        <h2>Faculty List</h2>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="faculty-container">
+            {% for faculty in faculties %}
+            <div class="faculty-block" onclick="window.location.href='{{ url_for('feedback', faculty_id=faculty[0]) }}'">
+                <h3>{{ faculty[1] }}</h3> <!-- Faculty Name -->
+                <p><strong>Department:</strong> {{ faculty[2] }}</p>
+                <p><strong>Building:</strong> {{ faculty[3] }}</p>
+                <p><strong>Floor:</strong> {{ faculty[4] }}</p>
+                <p><strong>Room:</strong> {{ faculty[5] }}</p>
+                <p><strong>Email:</strong> {{ faculty[6] }}</p>
+                <p><strong>Phone:</strong> {{ faculty[7] }}</p>
+                <button class="feedback-btn">Give Feedback</button>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GITAM Feedback System</p>
+    </footer>
+</body>
+</html>

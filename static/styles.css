@@ -1,0 +1,735 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5e9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #006764;
+    font-weight: bold;
+}
+
+header h2 {
+    font-size: 1.6rem;
+    color: #004c4a;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Login Box */
+.login-box {
+    background-color: #f6d9b7;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-box h3 {
+    font-size: 1.5rem;
+    color: #006764;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #006764;
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #006764;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #004c4a;
+    outline: none;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #006764;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+    background-color: #004c4a;
+    transform: translateY(-2px);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #006764;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 30px 20px;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+    }
+
+    .form-group input {
+        font-size: 1rem;
+    }
+
+    .login-btn {
+        font-size: 1rem;
+    }
+}
+
+
+/* Role Selection Container */
+.role-selection-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch; /* Ensures cards stretch evenly */
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Role Cards - Equal Sizes */
+.role-card {
+    flex: 1; /* Ensures both cards take equal width */
+    background-color: #f6d9b7;
+    border: 2px solid #006764;
+    border-radius: 12px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.role-card h3 {
+    font-size: 1.4rem;
+    color: #006764;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.role-card p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    flex-grow: 1; /* Ensures content spacing */
+}
+
+/* Buttons - Clean Look */
+.role-btn {
+    background-color: #006764;
+    color: #ffffff;
+    border: none; /* Removes button border */
+    outline: none; /* Removes the light box */
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto; /* Aligns button to the bottom */
+}
+
+.role-btn:hover {
+    background-color: #004c4a;
+    transform: scale(1.05);
+}
+
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #006764;
+}
+
+
+
+/* Main Section Styling */
+main {
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+/* Faculty Container */
+.faculty-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.faculty-block {
+    background-color: #f6d9b7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.faculty-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.faculty-block h3 {
+    color: #006764;
+    margin-bottom: 10px;
+}
+
+.faculty-block p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.feedback-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #006764;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-btn:hover {
+    background-color: #004c4a;
+}
+
+/* Feedback Block Styling */
+.feedback-block {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-block h3 {
+    color: #006764;
+    margin-bottom: 10px;
+}
+
+.feedback-block p, .feedback-block ul {
+    margin: 10px 0;
+}
+
+.feedback-block ul {
+    list-style: none;
+}
+
+.feedback-block li {
+    margin-bottom: 5px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #006764;
+    color: white;
+    font-size: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f6d9b7;
+}
+
+tr:hover {
+    background-color: #e8cfa3;
+}
+
+/* Form Styling */
+form {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f6d9b7;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #006764;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #006764;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+button.submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #006764;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover {
+    background-color: #004c4a;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #006764;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faculty-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .faculty-block {
+        width: 100%;
+    }
+}
+
+/* Dashboard Manager Section Styling */
+.dashboard-man {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-man h2 {
+    font-size: 2rem;
+    color: #006764;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #006764;
+    padding-bottom: 10px;
+}
+
+/* Feedback Cards Container */
+.dashboard-man .feedback-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual Feedback Card */
+.feedback-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.feedback-card h3 {
+    font-size: 1.5rem;
+    color: #006764;
+    margin-bottom: 10px;
+}
+
+.feedback-card h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.feedback-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.feedback-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.feedback-card li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.feedback-card li strong {
+    color: #006764;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-man {
+        padding: 15px;
+    }
+    .feedback-card {
+        padding: 15px;
+    }
+}
+/* Dashboard Manager Section Styling */
+.dashboard-man {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Feedback Card */
+.feedback-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feedback-card h3 {
+    font-size: 1.5rem;
+    color: #006764;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* Feedback Section */
+.feedback-section {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.feedback-section h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.feedback-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.feedback-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feedback-section li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.feedback-section li strong {
+    color: #006764;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-man {
+        padding: 15px;
+    }
+
+    .feedback-card {
+        padding: 15px;
+    }
+}
+/* Feedback Form Container */
+.feedback-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f6d9b7;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #006764;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #006764;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #004c4a;
+    outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #006764;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+    background-color: #004c4a;
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feedback-form-container {
+        padding: 20px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+    }
+}
+/* Success Page Container */
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff5e9;
+    padding: 20px;
+}
+
+/* Success Message Box */
+.success-message {
+    text-align: center;
+    background-color: #f6d9b7;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading */
+.success-message h1 {
+    font-size: 2.5rem;
+    color: #006764;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Subtext */
+.success-message p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Home Button */
+.home-btn {
+    display: inline-block;
+    background-color: #006764;
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-btn:hover {
+    background-color: #004c4a;
+    transform: translateY(-2px);
+}
+
+.home-btn:active {
+    transform: translateY(0);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+

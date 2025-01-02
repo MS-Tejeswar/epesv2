@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>GITAM Feedback System</h1>
+        <h2>Manager Dashboard</h2>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="dashboard-man">
+            {% for faculty_id, faculty in summaries.items() %}
+            <div class="feedback-card">
+                <h3>{{ faculty.name }}</h3>
+                <!-- Adjectives Section -->
+                <!-- Adjectives Section -->
+                <div class="feedback-section">
+                    <h4>Adjectives</h4>
+                    {% if faculty.adjectives %}
+                        <ul>
+                            {% for adj in faculty.adjectives %}
+                                <li>
+                                    {% if adj[0].lower() == 'positive' %}
+                                        <span style="color: green;">&#x2705;</span> <!-- Green Tick -->
+                                    {% elif adj[0].lower() == 'negative' %}
+                                        <span style="color: red;">&#x274C;</span> <!-- Red X -->
+                                    {% else %}
+                                        {{ adj[0] }} <!-- Default: Display adjective type as text -->
+                                    {% endif %}
+                                    {{ adj[1] }} ({{ adj[2] }})
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No adjectives available.</p>
+                    {% endif %}
+                </div>
+
+
+                <!-- Parent Feedback -->
+                <div class="feedback-section">
+                    <h4>Parent Feedback</h4>
+                    {% if faculty.parent_summary %}
+                        <p><strong>Summary:</strong> {{ faculty.parent_summary[0] }}</p>
+                        <ul>
+                            <li><strong>Competence:</strong> {{ faculty.parent_summary[1] }}</li>
+                            <li><strong>Attitude:</strong> {{ faculty.parent_summary[2] }}</li>
+                            <li><strong>Task Resolution:</strong> {{ faculty.parent_summary[3] }}</li>
+                            <li><strong>Patience & Composure:</strong> {{ faculty.parent_summary[4] }}</li>
+                            <li><strong>Availability:</strong> {{ faculty.parent_summary[5] }}</li>
+                        </ul>
+                    {% else %}
+                        <p>No parent feedback available.</p>
+                    {% endif %}
+                </div>
+
+                <!-- Student Feedback -->
+                <div class="feedback-section">
+                    <h4>Student Feedback</h4>
+                    {% if faculty.student_summary %}
+                        <p><strong>Summary:</strong> {{ faculty.student_summary[0] }}</p>
+                        <ul>
+                            <li><strong>Competence:</strong> {{ faculty.student_summary[1] }}</li>
+                            <li><strong>Attitude:</strong> {{ faculty.student_summary[2] }}</li>
+                            <li><strong>Task Resolution:</strong> {{ faculty.student_summary[3] }}</li>
+                            <li><strong>Patience & Composure:</strong> {{ faculty.student_summary[4] }}</li>
+                            <li><strong>Availability:</strong> {{ faculty.student_summary[5] }}</li>
+                        </ul>
+                    {% else %}
+                        <p>No student feedback available.</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GITAM Feedback System</p>
+    </footer>
+</body>
+</html>

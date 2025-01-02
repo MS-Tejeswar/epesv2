@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Feedback Form</title>
+    <!-- Link to Single CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>GITAM Feedback System</h1>
+        <h2>Parent Feedback Form</h2>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <form method="POST" action="/parent_feedback" class="feedback-form">
+            <label for="parent_name">Parent Name:</label>
+            <input type="text" id="parent_name" name="parent_name" required>
+
+            <label for="parent_number">Parent Number:</label>
+            <input type="text" id="parent_number" name="parent_number" required>
+
+            <label for="ward_name">Ward Name:</label>
+            <input type="text" id="ward_name" name="ward_name" required>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GITAM Feedback System</p>
+    </footer>
+</body>
+</html>

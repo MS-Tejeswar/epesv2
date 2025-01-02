@@ -1,0 +1,71 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ece0d2;
+  }
+  
+  header {
+    background-color: #006764 !important;  /* Added !important to force color change */
+    color: #f6dab8;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .faculty-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .faculty-card {
+    width: 250px;
+    background-color: #f6dab8 !important; /* Added !important to force color change */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;  /* Align text to the left */
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .faculty-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .faculty-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .faculty-info {
+    padding: 10px 0;
+  }
+  
+  .faculty-info h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+    margin-bottom: 5px;  /* Add space between name and other details */
+  }
+  
+  .faculty-info p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .faculty-info strong {
+    font-weight: bold;
+  }
+  
