@@ -10,7 +10,7 @@ CORS(app)  # Enable CORS for frontend-backend communication
 # Database connection function
 def get_db_connection():
     return mysql.connector.connect(
-        host='106.51.40.181
+        host='106.51.40.181',
         user='if0_38043876',
         password='if0_38043876_epes',
         database='TdfUn0F2CX3M'
