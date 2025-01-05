@@ -1,24 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import mysql.connector
-from transformers import BartForConditionalGeneration, BartTokenizer
-from werkzeug.security import generate_password_hash, check_password_hash
 from flask_cors import CORS
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = 'your_secret_key'  # Replace with a strong secret key
 CORS(app)  # Enable CORS for frontend-backend communication
 
-# Initialize BART model and tokenizer
-tokenizer = BartTokenizer.from_pretrained('facebook/bart-large-cnn')
-model = BartForConditionalGeneration.from_pretrained('facebook/bart-large-cnn')
 
 # Database connection function
 def get_db_connection():
     return mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='user1234',  # Replace with your MySQL password
-        database='epes'
+        host='sql110.infinityfree.com',
+        user='if0_38043876',
+        password='if0_38043876_epes',
+        database='TdfUn0F2CX3M'
     )
 
 @app.route('/')
