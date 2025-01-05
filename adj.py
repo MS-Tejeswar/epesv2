@@ -1,4 +1,4 @@
-import pymysql
+import mysql
 import spacy
 from flask import Flask, jsonify
 from collections import Counter
@@ -17,13 +17,11 @@ sentiment_analyzer = SentimentIntensityAnalyzer()
 
 # Database connection
 def get_connection():
-    return pymysql.connect(
-        host="localhost",
-        user="root",
-        password="user1234",
-        database="epes",
-        charset="utf8mb4",
-        cursorclass=pymysql.cursors.DictCursor
+    return mysql.connector.connect(
+        host='sql110.infinityfree.com',
+        user='if0_38043876',
+        password='if0_38043876_epes',
+        database='TdfUn0F2CX3M'
     )
 
 # Extract adjectives from text
